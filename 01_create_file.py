@@ -7,14 +7,11 @@
 # Dependency
 import os
 
-p = 'C:\\...'
-os.chdir(p)
-
 def create_file():
     new_file = open('new_file.txt', 'w')
     new_file.close()
 
 if __name__ == "__main__":
-    p = 'C:\\...'
-    os.chdir(p)
+    p = 'C:\\...'   # Define absolute path
+    os.chdir(p)     # Change working directory
     create_file()
