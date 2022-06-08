@@ -17,6 +17,10 @@ creation = time.localtime(creation_ts)
 modification = time.localtime(last_modification_ts)
 access = time.localtime(last_access_ts)
 
+print(creation)
+print(modification)
+print(access)
+
 # Accessing attributes to obtain single elements:
 creation.tm_year
 creation.tm_mon
