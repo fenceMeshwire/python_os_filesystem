@@ -20,3 +20,7 @@ shutil.move(file_name, abs_target_dir) # Move file to directory
 # Rename operation
 os.chdir(abs_target_dir) # Change working directory
 shutil.move(file_name, new_file_name) # Rename file name.
+
+# Copy operation
+os.chdir(abs_dir) # Change working directory
+shutil.copy(file_name, abs_target_dir) # Copy file to directory
