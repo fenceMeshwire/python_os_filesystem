@@ -2,7 +2,7 @@
 
 # Python 3.9.7
 
-# 05_move_rename_operations.py
+# 05_move_rename_copy_delete_operations.py
 
 # Dependencies
 import os, shutil
