@@ -27,7 +27,7 @@ def zip_directory(directory):
     
     # C: Use walk and add files to the current ZIP file:
     for dir_name, sub_dir, filenames in os.walk(directory):
-        print(f'Writing files to {dir_name}')
+        print(f'Writing files to: {dir_name}')
         # Write current directory to ZIP file:
         back_up.write(dir_name)
         # Write all files from this directory to the ZIP file:
