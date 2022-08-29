@@ -42,17 +42,14 @@ def zip_directory(directory, time_stamp):
 def create_time_stamp():
     # Create local time (lt)
     lt = datetime.now()
-    year = lt.year
-    month = lt.month
-    day = lt.day
-    hour = lt.hour
-    minute = lt.minute
+    year, month, day, hour, minute = lt.year, lt.month, lt.day, lt.hour, lt.minute
     if int(month) < 10: month = "0" + str(month)
     if int(day) < 10: day = "0" + str(day)
     if int(hour) < 10: month = "0" + str(hour)
     if int(minute) < 10: day = "0" + str(minute)
     time_stamp = str(year) + str(month) + str(day) + "_" + str(hour) + str(minute)
     return time_stamp
+
 
 if __name__ == '__main__':
     directory = 'C:\\temp\\test'
