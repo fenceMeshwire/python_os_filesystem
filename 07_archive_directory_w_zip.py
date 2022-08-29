@@ -7,19 +7,19 @@
 # Purpose: Back up a directory with all subdirectories and files.
 
 # Dependencies
+from datetime import datetime
 import os
+from time import time
 import zipfile
 
-def zip_directory(directory):
-  
+def zip_directory(directory, time_stamp):
+    
     directory = os.path.abspath(directory)
-    consecutive_number = 1
     # A: Check if a zip file already exists and if so add 1 to the consecutive number
     while True:
-        zip_file_name = os.path.basename(directory) + "_" + str(consecutive_number) + ".zip"
+        zip_file_name = os.path.basename(directory) + "_" + time_stamp + ".zip"
         if not os.path.exists(zip_file_name):
             break
-        consecutive_number += 1
 
     # B: Make a ZIP file. The 'write' method is used to attach further directories to the ZIP file.
     print(f'Creating new archive: {zip_file_name}')
@@ -39,7 +39,23 @@ def zip_directory(directory):
     back_up.close()
     print('Archiving completed.')
 
+def create_time_stamp():
+    # Create local time (lt)
+    lt = datetime.now()
+    year = lt.year
+    month = lt.month
+    day = lt.day
+    hour = lt.hour
+    minute = lt.minute
+    if int(month) < 10: month = "0" + str(month)
+    if int(day) < 10: day = "0" + str(day)
+    if int(hour) < 10: month = "0" + str(hour)
+    if int(minute) < 10: day = "0" + str(minute)
+    time_stamp = str(year) + str(month) + str(day) + "_" + str(hour) + str(minute)
+    return time_stamp
+
 if __name__ == '__main__':
     directory = 'C:\\temp\\test'
     os.chdir(directory)
-    zip_directory(directory)
+    time_stamp = create_time_stamp()
+    zip_directory(directory, time_stamp)
