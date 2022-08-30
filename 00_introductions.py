@@ -17,7 +17,7 @@ Path.cwd()
 number_of_files = len([filename for filename in os.listdir('.') if os.path.isfile(filename)])
 print(number_of_files)
 
-# Get the file names:
+# Get the file names in the current working directory:
 filenames = [filename for filename in os.listdir('.') if os.path.isfile(filename)]
 print(filenames)
 
