@@ -8,6 +8,7 @@
 import os
 from pathlib import Path
 
+# Change current working directory
 path = Path('C:/Windows/system32/')
 os.chdir(path)
 Path.cwd()
@@ -19,3 +20,14 @@ print(number_of_files)
 # Get the file names:
 filenames = [filename for filename in os.listdir('.') if os.path.isfile(filename)]
 print(filenames)
+
+# Resolve components of an absolute path, e.g. :
+path = Path('C:/Windows/system32/notepad.exe')
+os.chdir(path)
+Path.cwd()
+
+path.anchor   # 'C:\\'
+path.name     # 'notepad.exe'
+path.stem     # 'notepad'
+path.suffix   # '.exe'
+path.drive    # 'C:'
