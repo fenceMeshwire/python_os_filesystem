@@ -14,14 +14,20 @@ path = '/Users/user/directory'
 files = os.listdir(path)
 files.sort()
 
-file_counter = 0
-total_size_bytes = 0
+dir_counter, file_counter, total_size_bytes = 0, 0, 0
 
 for file_name in files:
+    # Determine if the path is a directory
+    if os.path.isdir(os.path.join(path, file_name)):
+        print("<DIR>\t", file_name)
+        dir_counter += 1
+    # Determine if the path is a file
+    if not os.path.isdir(os.path.join(path, file_name)):
+        print("<FILE>\t", file_name)
+        file_counter += 1
     file_size_bytes = os.path.getsize(os.path.join(path, file_name))
-    print("File name:", file_name, "File size:", file_size_bytes, "Byte")
     total_size_bytes = total_size_bytes + file_size_bytes
-    file_counter += 1
 
+print("Total directories:", dir_counter)
 print("Total files:", file_counter)
 print("Total size:", total_size_bytes, "Bytes")
