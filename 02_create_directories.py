@@ -20,7 +20,8 @@ def create_directories():
             strDirectoryNum = str(intCounter)
 
         subfolder_name = strDirectoryNum + subfolder
-        os.makedirs(subfolder_name)
+        if not os.path.exists(subfolder_name):
+            os.makedirs(subfolder_name)
 
 if __name__ == "__main__":
     p = 'C:\\...'
