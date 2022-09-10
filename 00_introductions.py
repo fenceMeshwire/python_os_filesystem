@@ -11,7 +11,12 @@ from pathlib import Path
 # Change current working directory
 path = Path('C:/Windows/system32/')
 os.chdir(path)
+
+# Print current working directory
 Path.cwd()
+
+# Return the directories and files of the current working directory
+os.listdir('.')
 
 # Get number of files in the current working directory:
 number_of_files = len([filename for filename in os.listdir('.') if os.path.isfile(filename)])
