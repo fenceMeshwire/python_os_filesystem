@@ -8,12 +8,10 @@ import os
 from pathlib import Path
 
 def create_dir_structure(path, main_folders, subfolders):
-  
     os.chdir(path)
     for main_folder in main_folders:
         if not os.path.exists(main_folder):
             os.mkdir(main_folder)
-            
         for folder in os.listdir(path):
             main_folder_path = str(Path(path, folder))
             for subfolder in subfolders:
