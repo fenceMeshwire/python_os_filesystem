@@ -14,9 +14,9 @@ path = 'C:\\Users\\user\\...'
 os.chdir(path)
 
 # Read from compressed gz format:
-with gzip.open('gzipped.gz', 'rt') as gzipped_file:
+with gzip.open('gzipped.gz', 'rb') as gzipped_file:
   content = gzipped_file.read()
   
 # Read from compressed bz2 format:
-with bz2.open('bzipped.bz2', 'rt') as bzipped_file:
+with bz2.open('bzipped.bz2', 'rb') as bzipped_file:
   content = bzipped_file.read()
