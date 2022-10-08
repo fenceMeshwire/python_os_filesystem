@@ -2,7 +2,7 @@
 
 # Python 3.9.5
 
-# 13_read_zip_files.py
+# 13_read_bz2_gzip_files.py
 
 # Dependencies
 import bz2
