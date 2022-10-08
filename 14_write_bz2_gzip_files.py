@@ -13,6 +13,8 @@ import os
 path = 'C:\\Users\\user\\...'
 os.chdir(path)
 
+# WRITE TO COMPRESSED DATA
+
 content = '.!?abcdefghijklmnopqrstuvwxyz0123456789'
 
 # Write to compressed gz format:
