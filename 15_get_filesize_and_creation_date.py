@@ -2,7 +2,7 @@
 
 # Python 3.9.5
 
-# 15_get_file_size_date.py
+# 15_get_filesize_and_creation_date.py
 
 # Dependencies
 import os
